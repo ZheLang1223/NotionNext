@@ -113,11 +113,7 @@ const LayoutBase = props => {
 
   // 2024.6.15 
   // 定义一个状态来跟踪侧边栏的展开状态
-  const [isLeftbarOpen, setIsLeftbarkOpen] = useState(false);
-  // 定义切换侧边栏状态的函数
-  const toggleLeftbar = () => {
-    setIsLeftbarkOpen(!isLeftbarOpen);
-  }
+  const [isLeftbarOpen, setIsLeftbarOpen] = useState(false);
 
   useEffect(() => {
     setFilteredNavPages(getNavPagesWithLatest(allNavPages, latestPosts, post))
@@ -178,8 +174,6 @@ const LayoutBase = props => {
                 'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray'
               }>
               <div className={`w-72 pt-14 pb-4 px-6 sticky top-0 h-screen flex justify-between flex-col ${isLeftbarOpen ? '' : hidden}`}>
-
-                
                 {/* 导航 */}
                 <div className='overflow-y-scroll scroll-hidden'>
                   {/* 嵌入 */}
