@@ -229,7 +229,7 @@ const LayoutBase = props => {
                     </>
                   )}
                   {/* gitbook主题首页只显示公告 */}
-                  <Announcement {...props} />
+                  {/*<Announcement {...props} />*/}
                 </div>
 
                 <AdSlot type='in-article' />
