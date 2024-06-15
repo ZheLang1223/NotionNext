@@ -120,7 +120,7 @@ const LayoutBase = props => {
 
     const handleMouseMove = (event) => {
       // 假设屏幕最左侧的宽度为20px，可以根据实际情况调整
-      const leftThreshold = 20;
+      const leftThreshold = 80;
       if (event.clientX < leftThreshold) {
         setIsLeftbarOpen(true);
       } else {
@@ -171,9 +171,9 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               className={
-                'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray'
+                `${isLeftbarOpen ? '' : hidden} md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray`
               }>
-              <div className={`w-72 pt-14 pb-4 px-6 sticky top-0 h-screen flex justify-between flex-col ${isLeftbarOpen ? '' : hidden}`}>
+              <div className={`w-72 pt-14 pb-4 px-6 sticky top-0 h-screen flex justify-between flex-col`}>
                 {/* 导航 */}
                 <div className='overflow-y-scroll scroll-hidden'>
                   {/* 嵌入 */}
