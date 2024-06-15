@@ -113,7 +113,7 @@ const LayoutBase = props => {
 
   // 2024.6.15 
   // 定义一个状态来跟踪侧边栏的展开状态
-  const [isLeftbarOpen, setIsLeftbarOpen] = useState(false);
+  const [isLeftbarOpen, setIsLeftbarOpen] = useState(true);
 
   useEffect(() => {
     setFilteredNavPages(getNavPagesWithLatest(allNavPages, latestPosts, post))
