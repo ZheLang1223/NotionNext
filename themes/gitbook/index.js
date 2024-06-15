@@ -111,30 +111,8 @@ const LayoutBase = props => {
   const showTocButton = post?.toc?.length > 1
   const searchModal = useRef(null)
 
-  // 2024.6.15 
-  // 定义一个状态来跟踪侧边栏的展开状态
-  const [isLeftbarOpen, setIsLeftbarOpen] = useState(true);
-
   useEffect(() => {
     setFilteredNavPages(getNavPagesWithLatest(allNavPages, latestPosts, post))
-
-    const handleMouseMove = (event) => {
-      // 假设屏幕最左侧的宽度为20px，可以根据实际情况调整
-      const leftThreshold = 80;
-      if (event.clientX < leftThreshold) {
-        setIsLeftbarOpen(true);
-      } else {
-        setIsLeftbarOpen(false);
-      }
-    }
-
-    // 添加事件监听器
-    document.addEventListener('mousemove', handleMouseMove);
-
-    // 组件卸载时移除事件监听器
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
   }, [router])
 
 
@@ -171,7 +149,7 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               className={
-                `${isLeftbarOpen ? '' : hidden} md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray`
+                'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray'
               }>
               <div className={`w-72 pt-14 pb-4 px-6 sticky top-0 h-screen flex justify-between flex-col`}>
                 {/* 导航 */}
